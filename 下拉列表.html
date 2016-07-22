@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <style>
+        #menu{
+            //display:block;
+            width:300px;
+            font-size: 20px;
+        }
+        .has_children{
+            background:#2B93D2;
+            color:#404040;
+            cursor:pointer;
+        }
+        div{
+            padding:0;
+            margin:10px 0;
+        }
+        div a{
+            background-color: purple;
+            display:none;
+            float:left;
+            width:300px;
+        }
+        .highlight{
+            color:#ff4400;
+            background-color: #888;
+        }
+    </style>
+    <script>
+       $(document).ready(function(){
+          $(".has_children").click(function(){
+              $(this).children("a").toggle();
+          });
+       });
+    </script>
+    <title>Title</title>
+</head>
+<body>
+    <div id="menu">
+        <div class="has_children">
+            <span>第一章-认识</span>
+            <a href="">1.1-JavaScript和JavaScript库</a>
+            <a href="">1.2-加入jQuery</a>
+            <a href="">1.3编写简单jQuery</a>
+            <a href="">1.4jQuery对象和DOM对象</a>
+            <a href="">1.5解决jQuery和其他库的冲突</a>
+            <a href="">1.6jQury开发工具和插件</a>
+            <a href="">1.7小结</a>
+        </div>
+
+        <div class="has_children">
+            <span>第二章-加深</span>
+            <a href="">1.1-JavaScript和JavaScript库</a>
+            <a href="">1.2-加入jQuery</a>
+            <a href="">1.3编写简单jQuery</a>
+            <a href="">1.4jQuery对象和DOM对象</a>
+            <a href="">1.5解决jQuery和其他库的冲突</a>
+            <a href="">1.6jQury开发工具和插件</a>
+            <a href="">1.7小结</a>
+        </div>
+
+        <div class="has_children">
+            <span>第三章-升级</span>
+            <a href="">1.1-JavaScript和JavaScript库</a>
+            <a href="">1.2-加入jQuery</a>
+            <a href="">1.3编写简单jQuery</a>
+            <a href="">1.4jQuery对象和DOM对象</a>
+            <a href="">1.5解决jQuery和其他库的冲突</a>
+            <a href="">1.6jQury开发工具和插件</a>
+            <a href="">1.7小结</a>
+        </div>
+    </div>
+
+</body>
+</html>

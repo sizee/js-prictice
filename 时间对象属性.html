@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+      /*  $(function(){
+            $("a").click(function(event){
+                alert(event.type);
+                return false;
+            })
+
+        })*/
+      $(function(){
+      /*   $("#add").bind("click",function(){
+             $("a").append("<p>我绑定的函数1</p>");
+         }).bind("click",function(){
+             $("a").append("<p>我绑定的函数2</p>");
+         }).bind("click",function(){
+             $("a").append("<p>我绑定的函数3</p>");
+         })
+          $('#del').click(function(){
+              $("#add").unbind("click");
+          })*/
+         $("#add").bind("click",myfun1=function(e){
+             $("a").append("<p>你的世界1</p>");
+             e.stopPropagation();
+         }).bind("click",myfun2=function(e){
+             $("a").append("<p>你的世界2</p>");
+             e.stopPropagation();
+         }).bind("click",myfun3=function(e){
+             $("a").append("<p>你的世界3</p>");
+             e.stopPropagation();
+         })
+           $("#del").click(function(){
+                $("#add").unbind("click",myfun2).unbind("click",myfun1);
+            })
+      })
+
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<a href="#">我的世界</a>
+<button id="add">点我啊</button>
+<button id="del">删除所有事件</button>
+</body>
+</html>

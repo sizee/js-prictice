@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(function() {
+            /*  var $li=$("ul li:eq(1)");
+            var li_txt=$li.text();
+            alert(li_txt);*/
+            /*  var $para=$("p");
+            var p_txt=$para.attr("title");
+            alert(p_txt);*/
+            /* var $li_2=$("<li>雪梨</li>");
+            var $li_1=$("<li title='title=香蕉'>香蕉</li>");*/
+            /*   var $li_1=$("<li title='title=香蕉'>香蕉</li>");
+            var $li_2=$("<li title='title=雪梨' style='color:red' >雪梨</li>");
+            var $li_3=$("<li title='title=其他' style='color:green'>其他</li>");
+            var $parent=$("ul");
+            //var $two_li=$("ul li:eq(1)");
+            $parent.append($li_1);
+           // $li_2.appendTo($parent);
+            $parent.prepend($li_2);
+            $li_3.insertAfter($two_li);
+            var $one_li=$("ul li:eq(1)");
+            var $two_li=$("ul li:eq(2)");
+            $two_li.insertBefore($one_li);
+/////////////////////////////////////
+            $one_li.remove();
+            $one_li.appendTo("ul");
+            $one_li.empty();
+            $one_li.remove();
+            $("ul li:eq(0)").click(function(){
+              //  $(this).clone().appendTo("ul");
+                $(this).clone(true).appendTo("ul");
+                })
+            $("p").replaceWith("<strong>你最不喜欢的水果是？");*/
+            /*   $("strong").wrap("<b></b>");
+            //  $("strong").wrapAll("<b></b>");
+            // $("strong").wrapInner("<b></b>");
+            $("p").attr({
+                "title":"your title",
+                "name":"test"
+            });
+            $("p").removeAttr("name");*/
+            /* $("p").addClass("height");
+            $("strong").attr("class","height");
+            $("p").addClass("lowe");
+            $("strong").attr("class","lowe");
+            $("p").removeClass("height");
+            $("p").removeClass();*/
+            /*  var $butT=$("button");
+            var $para=$("p");
+            $butT.click(function(){
+                $para.toggleClass("height");
+            })
+            $para.hasClass("height");
+            $para.is(".height")
+
+        })*/
+          var p_html=$("p").html();
+            alert(p_html);
+            /////////////////
+            $("p").html("<strong>你最喜欢的水果是？</strong> ");
+            alert(p_html)
+
+})
+
+
+    </script>
+    <style>
+        body{
+            background-color: #9E9E9E;
+        }
+        .height{
+            background-color: #1b6d85;
+        }
+        .lowe{
+            color: #4cae4c;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <strong title="选择你最喜欢的水果">选择你最喜欢的水果</strong>
+    <strong title="选择你最喜欢的水果">选择你最喜欢的水果</strong>
+    <p title="选择你最喜欢的水果。">你喜欢的水果是？</p>
+    <ul>
+        <li title="苹果">苹果</li>
+        <li title="橘子">橘子</li>
+        <li title="菠萝">菠萝</li>
+    </ul>
+<button>我的世界</button>
+</body>
+</html>

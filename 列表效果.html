@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $category=$('ul li:gt(5):not(:last)');
+            $category.hide();
+            var $toggleBtn=$('div.showmore>a');
+            $toggleBtn.click(function(){
+                if($category.is(":hidden"))
+                {
+                    $category.show();
+                    $('.showmore a span').text("精简显示品牌");
+                    $('ul li a').filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')").addClass("promoted");
+                }
+                else{
+                    $category.hide();
+                    $('.showmore a span').text("显示所有品牌");
+                    $('ul li a').removeClass("promoted");
+                }
+                return false;
+            })
+
+
+
+        })
+    </script>
+    <style>
+        .promoted{
+            color:lightcoral;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+        <div class="SubCategoryBox">
+            <ul>
+                <li><a href="#">佳能</a></li>
+                <li><a href="#">索尼</a></li>
+                <li><a href="#">三星</a></li>
+                <li><a href="#">尼康</a></li>
+                <li><a href="#">松下</a></li>
+                <li><a href="#">卡西欧</a></li>
+                <li><a href="#">富士</a></li>
+                <li><a href="#">柯达</a></li>
+                <li><a href="#">宾得</a></li>
+                <li><a href="#">理光</a></li>
+                <li><a href="#">奥林巴斯</a></li>
+                <li><a href="#">明基</a></li>
+                <li><a href="#">爱国者</a></li>
+                <li><a href="#">其他品牌相机</a></li>
+            </ul>
+            <div class="showmore">
+                <a href="more.html"><span>显示全部品牌</span></a>
+            </div>
+        </div>
+</body>
+</html>

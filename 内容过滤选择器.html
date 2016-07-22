@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <style>
+        div, span, p{
+            width:140px;
+            height:140px;
+            margin:5px;
+            background:#aaa;
+            border:#000 1px solid;
+            float:left;
+            font-size:17px;
+            font-family: Verdana;
+        }
+        div.mini{
+            width:55px;
+            height:55px;
+            background-color:#aaa;
+            font-size:12px;
+        }
+        div.hide, div.none{
+            display:none;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#btn1').click(function(){
+                $('div:contains(di)').css("background","red");
+            });
+            $('#btn2').click(function(){
+                $('div:empty').css("background","green");
+            });
+            $('#btn3').click(function(){
+                $('div:has(.mini)').css("background","red");
+            });
+            $('#btn4').click(function(){
+                $('div:parent').css("background","green");
+            });
+/////////////////////////////////////////////////////////////////
+            $('#btn5').click(function(){
+                $('div:visible').css("background","red");
+            })
+
+            $("#reset").click(function(){
+                $('*').removeAttr("style");
+            })
+
+
+        })
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<button id="reset">手动重置页面元素</button>
+
+<h3>过滤选择器</h3>
+<input  type="button" style=" background-color:red" value="选择文本内容为di的元素" id="btn1">
+<input  type="button" style="background-color:green" value="选择div为空元素" id="btn2">
+<input  type="button"  style=" background-color:red" value="选择class为mini外的div" id="btn3">
+<input  type="button" style="background-color:green" value="选择含有子元素或者文本的元素" id="btn4">
+<input type="button" style="background-color:red" value="选择选择器所匹配的元素" id="btn5">
+<input type="button" style="background-color:green" value="选择索引值等于3的元素" id="btn6">
+<input type="button" value="选择索引值大于3的元素" id="btn7">
+<input type="button" value="选择索引值小于3的元素" id="btn8">
+<input type="button" value="选择所有的标题元素" id="btn9">
+<input type="button" value="选择当前正在执行动画的所有元素" id="btn10">
+
+<br><br>
+<div class="one" id="one">
+    id为one，class为one的div,  1
+    <div class="mini">class为mini2</div>
+</div>
+<div class="one" id="two" title="test">id为two，class为one，3 title为test的div.
+    <div class="mini" title="other">class为mini，4 title为other</div>
+    <div class="mini" title="test">class为mini，5 title为test</div>
+</div>
+<div class="one">
+    <div class="mini">class为mini number is 7</div>
+    <div class="mini">class为mini number is 8</div>
+    <div class="mini">class为mini number is 9</div>
+    <div class="mini"></div>
+</div>
+<div class="one">
+    <div class="mini">class为mini 12</div>
+    <div class="mini">class为mini 13</div>
+    <div class="mini">class为mini 14</div>
+    <div class="mini" title="tesst">class为mini，15 title为tesst</div>
+</div>
+<div class="none" >style的display为"none"的div 16</div>
+<div class="hide">class为"hide"的div 17</div>
+<div>
+    包含input的type为“hidden”的 18
+    <input type="hidden" size="8"/>
+</div>
+<span id="mover">正在执行动画的span元素。</span>
+</body>
+</html>

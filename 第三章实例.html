@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(function () {
+            $("a.tooltip").mouseover(function (e) {
+                this.myTitle = this.title;
+                this.title = "";
+                var tooltip = "<div id='tooltip'>" + this.myTitle + "</div>";
+                $("body").append(tooltip);
+                $("#tooltip")
+                        .css({
+                            "top": e.pageY,
+                            "left": e.pageX
+                        }).show("fast");
+            }).mouseout(function () {
+                $("#tooltip").remove();
+                this.title = this.myTitle;
+            }).mousemove(function (e) {
+                $("#tooltip")
+                        .css({
+                            "top": e.pageY,
+                            "left": e.pageX
+                        });
+            });
+            /*////////////////////*/
+            $("a.toolimg").mouseover(function (e) {
+                 this.Title=this.title;
+                this.title="";
+                var tooltio = "<div id='toolti'><img src='"+ this.href +"' alt='产品预览图'/></div>";
+                $("body").append(tooltio);
+                $("#toolti")
+                        .css({
+                            "top": e.pageY,
+                            "left": e.pageX
+                        }).show("fast");
+
+
+            }).mouseout(function () {
+                this.title=this.Title;
+                $("#toolti").remove();
+            }).mousemove(function (e) {
+                 $("#toolti")
+                         .css({
+                             "top":e.pageY,
+                             "left":e.pageX
+                         })
+            })
+        })
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        #tooltip {
+            position: absolute;
+            border: 1px solid red;
+            background-color: #9E9E9E;
+            color: #333;
+            display: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #toolti {
+            position: absolute;
+
+            border: 1px solid red;
+            background-color: #9E9E9E;
+            color: #333;
+            display: none;
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            width:100%;
+        }
+        a {
+
+            background-color: #e8830d;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            font-size: 0;
+            -webkit-text-size-adjust: none;
+            list-style: none;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            border: 1px solid red;
+        }
+
+        li a {
+            font-size: 0;
+            -webkit-text-size-adjust: none;
+        }
+
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<p><a href="#" class="tooltip" title="这是我的超链接提示1.">提示1.</a></p>
+<p><a href="#" class="tooltip" title="这是我的超链接提示2.">提示2.</a></p>
+<p><a href="#" title="这是自带提示1.">自带提示1.</a></p>
+<p><a href="#" title="这是自带提示2.">自带提示2.</a></p>
+<ul>
+    <li><a href="images/apple_1_bigger.jpg" target="_blank" class="toolimg" title="苹果 ipod"><img src="images/apple_1.jpg" alt=""></a></li>
+    <li><a href="images/apple_2_bigger.jpg" target="_blank" class="toolimg" title="苹果 nano"><img src="images/apple_2.jpg" alt=""></a></li>
+    <li><a href="images/apple_3_bigger.jpg" target="_blank" class="toolimg" title="苹果 iphone"><img src="images/apple_3.jpg" alt=""></a></li>
+    <li><a href="images/apple_4_bigger.jpg" target="_blank"  class="toolimg" title="苹果 pc"><img src="images/apple_4.jpg" alt=""></a></li>
+
+</ul>
+</body>
+</html>

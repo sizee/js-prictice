@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#address").focus(function(){
+                var txt_value=$(this).val();
+                if(txt_value=="请输入邮箱地址"){
+                    $(this).val("");
+                }
+            });
+            $("#address").blur(function(){
+                var txt_value=$(this).val();
+                if(txt_value==""){
+                    $(this).val("请输入邮箱地址");
+                }
+            })
+          $("#password").focus(function(){
+                var txt_value=$(this).val();
+                if(txt_value=="请输入邮箱密码"){
+                    $(this).val("");
+                }
+            });
+            $("#password").blur(function(){
+                var txt_value=$(this).val();
+                if(txt_value==""){
+                    $(this).val("请输入邮箱密码");
+                }
+            });
+            $("#butn1").click(function(){
+                $("#single").val("选择2号");
+                $("#multiple").val(["选择2号","选择3号"])
+            });
+
+
+            $(":checkbox").val(["check2","check4"]);
+            $(":radio").val(["radio2"]);
+
+           var offset=$("#single").offset();
+            var left=offset.left;
+            var top=offset.top;
+            alert(left+"..."+top);
+            var position=$("#single").position();
+            var left2=position.left;
+            var top2=position.top;
+            alert(left2+" ... "+top2);
+            var $p=$("p");
+            var scrollTop=$p.scrollTop();
+            var scrollLeft=$p.scrollLeft();
+            alert(scrollTop+"  ...  "+scrollLeft);
+            $("div").scrollTop(300);
+            $("div").scrollLeft(300);
+            alert(scrollTop+"  ...  "+scrollLeft);
+
+        });
+    </script>
+    <title>Title</title>
+</head>
+<body style="margin:0;padding:0">
+<p style="margin:0;padding:0">我的世界我做主</p>
+<input type="text" id="address" value="请输入邮箱地址"/>
+<input type="password" id="password" value="请输入邮箱密码"/>
+<input type="button" value="登陆">
+<br><br><br>
+<input type="button" id="butn1" value="but1">
+<input type="button" id="butn2" value="but2">
+<input type="button" id="butn3" value="but3">
+
+<select  id="single">
+    <option >选择1号</option>
+    <option >选择2号</option>
+    <option >选择3号</option>
+</select>
+<select name="" id="multiple" multiple="multiple" size="3" style="height:120px;">
+    <option >选择2号</option>
+    <option >选择3号</option>
+    <option >选择4号</option>
+    <option selection="selected">选择5号</option>
+</select>
+<input type="checkbox" value="check1">多选1
+<input type="checkbox" value="check2">多选2
+<input type="checkbox" value="check3">多选3
+<input type="checkbox" value="check4">多选4
+<input type="radio" value="radio1">单选1
+<input type="radio" value="radio2">单选2
+<input type="radio" value="radio3">单选3
+<div style="height:200px;overflow:scroll"><h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+    <h1>我的世界</h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(function(){
+            $("span").bind("click",function(event){
+                var txt=$('#msg').html()+"<p>内层span元素被单击。</p>";
+                $('#msg').html(txt);
+                event.stopPropagation();
+            });
+            $("#content").bind("click",function(event){
+                var txt=$('#msg').html()+"<p>div content被单机</p>";
+                $('#msg').html(txt);
+                event.stopPropagation()
+            })
+            $("body").bind("click",function(event){
+                var txt=$('#msg').html()+"<p>body 被单机</p>";
+                $('#msg').html(txt);
+                event.stopPropagation();
+            })
+        })
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<div id="content">
+    外层div元素
+    <span>内层span元素</span>
+    外层div元素
+</div>
+<div id="msg"></div>
+</body>
+</html>
